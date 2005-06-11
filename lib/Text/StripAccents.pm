@@ -2,6 +2,18 @@
 # Text::StripAccents - remove non a-z chars from a string
 #  and replace them with their a-z counterparts
 ##############################################################
+#
+# Version information
+# ===================
+#
+# 0.1	CC	Apr 05		New module
+#
+# 0.11	CC	Jun 05		After feedback in cpanrating,
+#				documented that the module is
+#				latin1 only, and pp with no
+#				prereqs
+#
+##############################################################
 
 
 package Text::StripAccents;
@@ -11,7 +23,7 @@ use Exporter ();
 
 @ISA = qw(Exporter);
 @EXPORT = qw(stripaccents);
-$VERSION="0.1";
+$VERSION="0.11";
 
 ##############################################################
 =pod
@@ -36,7 +48,21 @@ OR
 
 =head1 DESCRIPTION
 
-This simple module takes accented characters and replaces them with their anglicised ASCII counterparts, e.g. Ü becomes U.
+This simple module takes accented characters and replaces them with their anglicised ASCII counterparts, e.g. Ü becomes U. It currently ONLY supports Latin1. If there are any characters I've missed out that you think should be included, please mail me and I'll add them in.
+
+This is a pure perl module with no prerequisites.
+
+=head1 PREREQS
+
+None.
+
+=head1 SEE ALSO
+
+Text::Unaccent is a much more advanced utility to do the same job, but with a C dependency.
+
+=head1 CHANGES
+
+0.11 - bugfix to clarify the documentation, as per Dobrica Pavlinusic's feedback.
 
 =head1 LICENSE
 
